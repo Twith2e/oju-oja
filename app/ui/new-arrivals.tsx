@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { FiShoppingBag } from "react-icons/fi";
-import Arrivals from "./arrivals";
+import ProductCard from "./product-card";
+import { newArrivals } from "@/app/data";
 
-export default function NewArrivals() {
+export default function NewProductCard() {
   return (
     <div className="px-24">
       <span className="flex gap-3 items-center font-medium text-base">
@@ -18,7 +19,20 @@ export default function NewArrivals() {
           View All
         </Link>
       </div>
-      <Arrivals />
+      <div className="arrivals-container">
+        {newArrivals.map((arrival) => (
+          <ProductCard
+            id={arrival.id}
+            productName={arrival.productName}
+            oldPrice={arrival.oldPrice}
+            newPrice={arrival.newPrice}
+            rating={arrival.rating}
+            ratingCount={arrival.ratingCount}
+            image={arrival.image}
+            key={arrival.id}
+          />
+        ))}
+      </div>
     </div>
   );
 }

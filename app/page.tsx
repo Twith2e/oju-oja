@@ -1,11 +1,14 @@
+import BestSellers from "./ui/best-sellers";
 import Categories from "./ui/categories";
+import LimitedPromo from "./ui/limited-promo";
 import NavBar from "./ui/nav-bar";
 import NewArrivals from "./ui/new-arrivals";
+import ProductBanner from "./ui/product-banner";
 import ProductGrid from "./ui/product-grid";
 
 export default function Home() {
   return (
-    <div>
+    <div className="mb-10">
       <header>
         <NavBar />
       </header>
@@ -18,6 +21,15 @@ export default function Home() {
         </section>
         <section className="pt-20">
           <NewArrivals />
+        </section>
+        <section className="pt-20">
+          <ProductBanner />
+        </section>
+        <section className="pt-20">
+          <BestSellers />
+        </section>
+        <section className="pt-20">
+          <LimitedPromo />
         </section>
       </main>
     </div>

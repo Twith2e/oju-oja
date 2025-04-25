@@ -27,7 +27,7 @@ export default function TopHeader() {
           <BsCartCheck size={24} color="#3C50E0" />
           <div className="flex flex-col items-end">
             <span className="text-[0.625rem]">CART</span>
-            <span>0</span>
+            <span>$0</span>
           </div>
         </li>
       </ul>
