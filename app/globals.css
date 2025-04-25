@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #e5eaf4;
+    --background: #fff;
     --foreground: #010101;
   }
 }
@@ -73,4 +73,17 @@ body {
 
 .small-2 {
   grid-area: small-2;
+}
+
+.arrivals-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-top: 20px;
+}
+
+
+.home-section-header {
+  @apply text-2xl font-semibold text-[#1C274C]
 }

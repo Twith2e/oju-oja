@@ -1,5 +1,6 @@
 import { CiShoppingTag } from "react-icons/ci";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import CategoryProducts from "./category-products";
 
 export default function Categories() {
   return (
@@ -9,24 +10,23 @@ export default function Categories() {
         Categories
       </span>
       <div className="flex justify-between items-center mt-4">
-        <h2 className="text-2xl font-semibold text-[#1C274C]">
-          Browse by Category
-        </h2>
+        <h2 className="home-section-header">Browse by Category</h2>
         <div className="flex gap-3">
           <button
-            className="border border-gray-400 p-2 rounded-md"
+            className="border border-gray-400 p-2 rounded-md hover:bg-[#3c50e0] hover:text-white transition-colors duration-200 cursor-pointer"
             type="button"
           >
             <GoChevronLeft size={24} />
           </button>
           <button
-            className="border border-gray-400 p-2 rounded-md"
+            className="border border-gray-400 p-2 rounded-md hover:bg-[#3c50e0] hover:text-white transition-colors duration-200 cursor-pointer"
             type="button"
           >
             <GoChevronRight size={24} />
           </button>
         </div>
       </div>
+      <CategoryProducts />
     </div>
   );
 }
