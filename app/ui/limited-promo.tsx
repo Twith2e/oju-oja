@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Countdown from "./countdown";
+import Link from "next/link";
 
 export default function LimitedPromo() {
   return (
@@ -14,6 +16,13 @@ export default function LimitedPromo() {
           <p className="text-base text-[#606882]">
             True Wireless Noise Cancelling Headphone
           </p>
+          <Countdown />
+          <Link
+            className="bg-[#3c50e0] text-white hover:bg-[#1C3FB7] py-4 px-[38px] rounded-md font-medium text-sm mt-10"
+            href=""
+          >
+            <span>Check it Out!</span>
+          </Link>
         </div>
         <Image
           className="absolute right-4 xl:right-33 bottom-4 xl:bottom-10"

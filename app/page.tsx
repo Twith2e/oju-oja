@@ -5,6 +5,7 @@ import NavBar from "./ui/nav-bar";
 import NewArrivals from "./ui/new-arrivals";
 import ProductBanner from "./ui/product-banner";
 import ProductGrid from "./ui/product-grid";
+import Testimonials from "./ui/testimonials";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
         </section>
         <section className="pt-20">
           <LimitedPromo />
+        </section>
+        <section className="pt-20">
+          <Testimonials />
         </section>
       </main>
     </div>
