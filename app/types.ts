@@ -22,3 +22,9 @@ export type testimonyCardType = {
   image: string;
   job: string;
 };
+
+export type footerType = {
+  Icon: React.ReactNode | undefined;
+  text: Array<string>;
+  header: string;
+};

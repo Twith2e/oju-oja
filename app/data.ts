@@ -106,3 +106,42 @@ export const newArrivals = [
     rating: 5,
   },
 ];
+
+export const testimonials = [
+  {
+    id: 1,
+    rating: 5,
+    name: "John Doe",
+    comment:
+      "Lorem ipsum dolor sit amet, adipiscing elit. Donec malesuada justo vitaeaugue suscipit beautiful vehicula",
+    image: "/iMac.webp",
+    job: "Backend Developer",
+  },
+  {
+    id: 2,
+    rating: 5,
+    name: "John Doe",
+    comment:
+      "Lorem ipsum dolor sit amet, adipiscing elit. Donec malesuada justo vitaeaugue suscipit beautiful vehicula",
+    image: "/iMac.webp",
+    job: "Backend Developer",
+  },
+  {
+    id: 3,
+    rating: 5,
+    name: "John Doe",
+    comment:
+      "Lorem ipsum dolor sit amet, adipiscing elit. Donec malesuada justo vitaeaugue suscipit beautiful vehicula",
+    image: "/iMac.webp",
+    job: "Backend Developer",
+  },
+  {
+    id: 4,
+    rating: 5,
+    name: "John Doe",
+    comment:
+      "Lorem ipsum dolor sit amet, adipiscing elit. Donec malesuada justo vitaeaugue suscipit beautiful vehicula",
+    image: "/iMac.webp",
+    job: "Backend Developer",
+  },
+];

@@ -109,6 +109,19 @@ body {
 }
 
 
+
 .home-section-header {
   @apply text-2xl font-semibold text-[#1C274C]
+}
+
+.footer-header {
+  @apply mb-[30px] text-[1.375rem] font-medium text-[#1C274C]
+}
+
+.footer-text {
+  @apply text-base text-[#606882]
+}
+
+.footer-list {
+  @apply flex gap-2 items-start
 }

@@ -10,7 +10,7 @@ export function TestimonyCard({
   job,
 }: testimonyCardType) {
   return (
-    <div className="flex flex-col bg-white shadow-md rounded-lg p-6 max-w-[400px]">
+    <div className="flex flex-col bg-white shadow-lg rounded-lg p-[30px] w-fit m-1">
       <div className="flex gap-2">
         {[...Array(5)].map((_, index) => (
           <FaStar
