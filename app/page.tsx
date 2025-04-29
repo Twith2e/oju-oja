@@ -1,20 +1,16 @@
-import BestSellers from "./ui/best-sellers";
-import Categories from "./ui/categories";
+import BestSellers from "./ui/home/best-sellers";
+import Categories from "./ui/home/categories";
 import Footer from "./ui/footer";
-import LimitedPromo from "./ui/limited-promo";
-import NavBar from "./ui/nav-bar";
-import NewArrivals from "./ui/new-arrivals";
+import LimitedPromo from "./ui/home/limited-promo";
+import NewArrivals from "./ui/home/new-arrivals";
 import Newsletter from "./ui/newsletter";
 import ProductBanner from "./ui/product-banner";
 import ProductGrid from "./ui/product-grid";
-import Testimonials from "./ui/testimonials";
+import Testimonials from "./ui/home/testimonials";
 
 export default function Home() {
   return (
     <div className="mb-10">
-      <header>
-        <NavBar />
-      </header>
       <main>
         <section className="bg-[#e5eaf4]">
           <ProductGrid />

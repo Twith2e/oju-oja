@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { testimonyCardType } from "../types";
+import { testimonyCardType } from "@/app/lib/definitions";
 import { FaStar } from "react-icons/fa";
 
 export function TestimonyCard({

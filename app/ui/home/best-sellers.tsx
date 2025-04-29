@@ -1,6 +1,6 @@
 import { TbBackpack } from "react-icons/tb";
-import { newArrivals } from "../data";
-import ProductCard from "./product-card";
+import { newArrivals } from "../../lib/json";
+import ProductCard from "../product-card";
 import Link from "next/link";
 
 export default function BestSellers() {

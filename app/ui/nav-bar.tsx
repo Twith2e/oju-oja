@@ -1,5 +1,5 @@
-import BottomHeader from "./bottom-header";
-import TopHeader from "./top-header";
+import BottomHeader from "./home/bottom-header";
+import TopHeader from "./home/top-header";
 
 export default function NavBar() {
   return (

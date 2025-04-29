@@ -1,4 +1,4 @@
-import SearchBar from "./search-bar";
+import SearchBar from "../search-bar";
 import { LuPhoneCall } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
 import { BsCartCheck } from "react-icons/bs";

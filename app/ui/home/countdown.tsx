@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { timerType } from "../types";
+import { timerType } from "../../lib/definitions";
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState<timerType>({

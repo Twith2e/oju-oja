@@ -1,7 +1,7 @@
 import { TestimonyCard } from "./testimony-card";
 import { PiUsersFour } from "react-icons/pi";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-import { testimonials } from "../data";
+import { testimonials } from "../../lib/json";
 
 export default function Testimonials() {
   return (

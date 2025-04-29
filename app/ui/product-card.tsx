@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import ProductActions from "./product-actions";
-import { productCardType } from "@/app/types";
+import { productCardType } from "@/app/lib/definitions";
 import { useState } from "react";
 
 export default function ProductCard({
@@ -26,7 +26,13 @@ export default function ProductCard({
       onMouseLeave={() => setHoveredProduct(null)}
     >
       <div className="w-70 h-70 bg-[#f2f3f8] rounded-md flex flex-col items-center justify-center">
-        <Image src={image} width={1000} height={1000} alt={image} />
+        <Image
+          className="p-2"
+          src={image}
+          width={600}
+          height={600}
+          alt={image}
+        />
       </div>
       <div className="flex flex-col gap-3 mt-3">
         <div className="flex gap-3 items-center">
