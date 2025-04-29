@@ -13,7 +13,7 @@ export default async function NewProductCard() {
     <div className="px-24">
       <span className="flex gap-3 items-center font-medium text-base">
         <FiShoppingBag color="#3c50e0" size={24} />
-        This Week's
+        This Week&apos;s
       </span>
       <div className="flex justify-between items-center mt-4">
         <h2 className="home-section-header">New Arrivals</h2>
