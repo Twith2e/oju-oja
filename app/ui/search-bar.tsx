@@ -1,4 +1,4 @@
-import { GoChevronDown, GoChevronUp } from "react-icons/go";
+import { GoChevronDown } from "react-icons/go";
 import { CiSearch } from "react-icons/ci";
 
 export default function SearchBar() {

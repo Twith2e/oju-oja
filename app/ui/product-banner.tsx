@@ -9,8 +9,8 @@ export default function ProductBanner() {
           <span className="text-xl font-medium">Apple iPhone 14 Plus</span>
           <span className="text-[2.5rem] font-bold">UP TO 30% OFF</span>
           <p className="text-[#606882] text-base">
-            iPhone 14 has the same superspeedy chip that's in iPhone 13 Pro, A15
-            Bionic, with a 5-core GPU, powers all the latest features.
+            iPhone 14 has the same superspeedy chip that&apos;s in iPhone 13
+            Pro, A15 Bionic, with a 5-core GPU, powers all the latest features.
           </p>
           <Link
             className="bg-[#3c50e0] hover:bg-[#1C3FB7] text-white py-[0.6875rem] px-[2.375rem] rounded-md text-sm font-medium"

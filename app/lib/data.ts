@@ -1,5 +1,3 @@
-import { Product } from "./definitions";
-
 export async function fetchAllProducts() {
   const res = await fetch("https://dummyjson.com/products?limit=10");
   if (!res.ok) {
