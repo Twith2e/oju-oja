@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Newsletter() {
   return (
-    <div className="px-24">
+    <div className="px-4 lg:px-10 xl:px-24">
       <div className="relative rounded-xl overflow-hidden">
         <Image
           alt="background illustration"

@@ -23,7 +23,7 @@ export function TestimonyCard({
         ))}
       </div>
       <p className="text-base text-[#1C274C] mt-2">{comment}</p>
-      <div className="flex items-center mt-4">
+      <div className="flex items-center mt-4 sm:w-full">
         <div className="w-14 h-14 rounded-full overflow-hidden">
           <Image
             className="object-cover"

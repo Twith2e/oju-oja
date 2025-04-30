@@ -3,34 +3,40 @@ import { LuPhoneCall } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
 import { BsCartCheck } from "react-icons/bs";
 import Link from "next/link";
+import Sidebar from "../sidebar";
 
 export default function TopHeader() {
   return (
-    <div className="py-6 px-24 flex justify-between items-center">
-      <div className="flex items-center gap-3">
-        <span>OJU OJA</span>
+    <div className="py-6 px-4 lg:px-10 gap-3 flex flex-col md:flex-row lg:justify-between">
+      <div className="flex flex-col lg:flex-row md:items-center gap-3">
+        <Link href="/" className="text-3xl text-[#3c50e0] font-bold">
+          OJU OJA
+        </Link>
         <SearchBar />
       </div>
-      <ul className="flex items-center gap-8 text-sm">
-        <li className="flex items-center gap-2">
-          <LuPhoneCall size={24} color="#3C50E0" />
-          <div className="flex flex-col">
-            <span className="text-[0.625rem]">24/7 support</span>
-            <span>08061417226</span>
-          </div>
-        </li>
-        <li className="flex items-center gap-2">
-          <CiUser size={24} color="#3C50E0" />
-          <Link href="">Sign In</Link>
-        </li>
-        <li className="flex items-center gap-2">
-          <BsCartCheck size={24} color="#3C50E0" />
-          <div className="flex flex-col items-end">
-            <span className="text-[0.625rem]">CART</span>
-            <span>$0</span>
-          </div>
-        </li>
-      </ul>
+      <div className="flex gap-8 items-center">
+        <ul className="flex items-center gap-8 text-sm">
+          <li className="xl:flex items-center gap-2 hidden">
+            <LuPhoneCall size={24} color="#3C50E0" />
+            <div className="flex flex-col">
+              <span className="text-[0.625rem]">24/7 support</span>
+              <span>08061417226</span>
+            </div>
+          </li>
+          <li className="flex items-center gap-2">
+            <CiUser size={24} color="#3C50E0" />
+            <Link href="">Sign In</Link>
+          </li>
+          <li className="flex items-center gap-2">
+            <BsCartCheck size={24} color="#3C50E0" />
+            <div className="flex flex-col items-end">
+              <span className="text-[0.625rem]">CART</span>
+              <span>$0</span>
+            </div>
+          </li>
+        </ul>
+        <Sidebar />
+      </div>
     </div>
   );
 }

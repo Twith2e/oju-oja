@@ -1,7 +1,7 @@
 "use client";
 
 import { CustomRadioProps } from "@/app/lib/definitions";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 export default function CustomRadio({ count, text }: CustomRadioProps) {
@@ -40,6 +40,21 @@ export default function CustomRadio({ count, text }: CustomRadioProps) {
   }
 
   const handleToggle = () => setIsChecked((prev) => !prev);
+
+  useEffect(() => {
+    const currentParams = new URLSearchParams(searchParams.toString());
+    const selectedCategory = textRef.current?.innerText;
+    if (!selectedCategory) return;
+
+    const existing = currentParams.get("category") ?? "";
+    const categories = existing ? existing.split(",") : [];
+
+    if (categories.includes(selectedCategory)) {
+      setIsChecked(true);
+    } else {
+      setIsChecked(false);
+    }
+  }, []);
 
   return (
     <div

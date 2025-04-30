@@ -3,7 +3,7 @@ import ProductCard from "../product-card";
 
 export default async function Products({ products }: { products: Product[] }) {
   return (
-    <div className="grid grid-cols-3 gap-5 overflow-auto">
+    <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 overflow-auto">
       {products.map((product) => (
         <ProductCard
           key={product.id}

@@ -30,18 +30,17 @@ export default async function Shop({
       params.set(key, value);
     }
   }
-
   const products = await fetchFilteredProducts(params);
   return (
     <div className="">
-      <div className="py-10 flex items-center justify-between px-24">
-        <h1 className="text-[2rem] text-[#1C274C] font-semibold">
+      <div className="py-10 flex flex-col lg:flex-row lg:items-center lg:justify-between px-4 lg:px-10 xl:px-24">
+        <h1 className="text-xl lg:text-[2rem] text-[#1C274C] font-semibold">
           Explore All Products
         </h1>
         <Breadcrumbs />
       </div>
-      <div className="products-container px-24 h-full py-28">
-        <div className="flex flex-col gap-8">
+      <div className="products-container px-4 lg:px-10 xl:px-24 h-full py-5 lg:py-28">
+        <div className="xl:flex flex-col gap-8 hidden">
           <ClearFilters />
           <Categories />
           <Tags />

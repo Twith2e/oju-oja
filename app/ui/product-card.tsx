@@ -21,14 +21,14 @@ export default function ProductCard({
 
   return (
     <div
-      className={`relative cursor-pointer `}
+      className="relative cursor-pointer w-full"
       key={id}
       onMouseEnter={() => setHoveredProduct(id)}
       onMouseLeave={() => setHoveredProduct(null)}
     >
-      <div className="w-70 h-70 bg-[#f2f3f8] rounded-md flex flex-col items-center justify-center">
+      <div className="w-full h-90 lg:h-70 bg-[#f2f3f8] rounded-md flex flex-col items-center justify-center">
         <Image
-          className={`p-2 rounded-lg max-h-full ${
+          className={`p-2 rounded-lg max-h-full w-full ${
             backgroundColor && "bg-white"
           }`}
           src={image}
@@ -37,7 +37,7 @@ export default function ProductCard({
           alt={image}
         />
       </div>
-      <div className="flex flex-col gap-3 mt-3">
+      <div className="flex flex-col gap-2 mt-3">
         <div className="flex gap-3 items-center">
           <div className="flex gap-1">
             {[...Array(5)].map((_, index) => (

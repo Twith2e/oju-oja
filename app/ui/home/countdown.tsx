@@ -35,27 +35,27 @@ export default function Countdown() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <div className="flex justify-between items-center text-sm text-[#1C274C] my-6 max-w-[300px]">
+    <div className="flex justify-between flex-wrap items-center text-sm text-[#1C274C] my-6 max-w-[300px]">
       <div className="flex flex-col gap-3 items-center">
-        <span className="bg-white py-3 px-4 rounded-md font-semibold text-3xl">
+        <span className="bg-white py-3 px-4 rounded-md font-semibold text-xl lg:text-3xl">
           {timeLeft.days.toString().padStart(2, "0")}
         </span>
         <span>Days</span>
       </div>
       <div className="flex flex-col gap-3 items-center">
-        <span className="bg-white py-3 px-4 rounded-md font-semibold text-3xl">
+        <span className="bg-white py-3 px-4 rounded-md font-semibold text-xl lg:text-3xl">
           {timeLeft.hours.toString().padStart(2, "0")}
         </span>
         <span>Hours</span>
       </div>
       <div className="flex flex-col gap-3 items-center">
-        <span className="bg-white py-3 px-4 rounded-md font-semibold text-3xl">
+        <span className="bg-white py-3 px-4 rounded-md font-semibold text-xl lg:text-3xl">
           {timeLeft.minutes.toString().padStart(2, "0")}
         </span>
         <span>Minutes</span>
       </div>
       <div className="flex flex-col gap-3 items-center">
-        <span className="bg-white py-3 px-4 rounded-md font-semibold text-3xl">
+        <span className="bg-white py-3 px-4 rounded-md font-semibold text-xl lg:text-3xl">
           {timeLeft.seconds.toString().padStart(2, "0")}
         </span>
         <span>Seconds</span>

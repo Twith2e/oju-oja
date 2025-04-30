@@ -8,10 +8,9 @@ export default async function NewProductCard() {
   const products: Product[] = await fetchAllProducts();
 
   const cappedProducts = products.slice(0, 8);
-  console.log(cappedProducts);
 
   return (
-    <div className="px-24">
+    <div className="px-4 lg:px-10 xl:px-24">
       <span className="flex gap-3 items-center font-medium text-base">
         <FiShoppingBag color="#3c50e0" size={24} />
         This Week&apos;s
@@ -25,7 +24,7 @@ export default async function NewProductCard() {
           View All
         </Link>
       </div>
-      <div className="arrivals-container">
+      <div className="arrivals-container w-full">
         {cappedProducts.map((product) => (
           <ProductCard
             id={product.id}

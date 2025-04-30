@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="px-24 flex justify-between gap-10">
+    <div className="px-4 lg:px-10 xl:px-24 flex flex-col lg:flex-row justify-between gap-10">
       <div className="flex flex-col max-w-[330px]">
         <h2 className="footer-header">Help & Support</h2>
         <ul className="footer-text flex flex-col gap-3">
