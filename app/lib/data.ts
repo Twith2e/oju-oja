@@ -1,3 +1,5 @@
+import { Product } from "./definitions";
+
 export async function fetchAllProducts() {
   const res = await fetch("https://dummyjson.com/products?limit=0");
   if (!res.ok) {
@@ -7,20 +9,6 @@ export async function fetchAllProducts() {
   const { products } = await res.json();
 
   return products;
-}
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
 }
 
 export async function fetchFilteredProducts(
@@ -35,7 +23,7 @@ export async function fetchFilteredProducts(
   const { products } = (await res.json()) as { products: Product[] };
 
   // 2️⃣ Start with the full list
-  let filtered = products;
+  let filtered: Product[] = products;
 
   // 3️⃣ Text search (q)
   const q = searchParams.get("q")?.toLowerCase();
@@ -60,7 +48,7 @@ export async function fetchFilteredProducts(
     const selectedTags = tagParam.split(",").map((t) => t.trim());
 
     // keep any product that has at least one of the selected tags
-    filtered = filtered.filter((p: any) =>
+    filtered = filtered.filter((p: Product) =>
       p.tags.some((tag: string) => selectedTags.includes(tag))
     );
   }

@@ -5,7 +5,7 @@ import { GoChevronDown } from "react-icons/go";
 
 export default function Dropdown() {
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [selected, setSelected] = useState("Latest Products");
+  const [selected] = useState("Latest Products");
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClickOutside = (event: MouseEvent) => {
