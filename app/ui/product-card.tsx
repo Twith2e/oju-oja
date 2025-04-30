@@ -15,22 +15,25 @@ export default function ProductCard({
   oldPrice,
   rating,
   ratingCount,
+  backgroundColor,
 }: productCardType) {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
 
   return (
     <div
-      className="relative cursor-pointer"
+      className={`relative cursor-pointer `}
       key={id}
       onMouseEnter={() => setHoveredProduct(id)}
       onMouseLeave={() => setHoveredProduct(null)}
     >
       <div className="w-70 h-70 bg-[#f2f3f8] rounded-md flex flex-col items-center justify-center">
         <Image
-          className="p-2"
+          className={`p-2 rounded-lg max-h-full ${
+            backgroundColor && "bg-white"
+          }`}
           src={image}
-          width={600}
-          height={600}
+          width={300}
+          height={300}
           alt={image}
         />
       </div>

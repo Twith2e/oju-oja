@@ -4,7 +4,7 @@ import { getCategories } from "../../lib/data";
 
 export default async function CategoryProducts() {
   const categories = await getCategories();
-  const cappedCategories = categories?.slice(0, 5);
+  const cappedCategories = categories?.slice(0, 6);
 
   return (
     <div className="flex overflow-auto gap-16 justify-center mt-8">

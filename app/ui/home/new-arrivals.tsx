@@ -8,6 +8,7 @@ export default async function NewProductCard() {
   const products: Product[] = await fetchAllProducts();
 
   const cappedProducts = products.slice(0, 8);
+  console.log(cappedProducts);
 
   return (
     <div className="px-24">

@@ -6,6 +6,7 @@ export type productCardType = {
   oldPrice: string;
   rating: number;
   ratingCount: number;
+  backgroundColor?: boolean;
 };
 
 export type timerType = {
@@ -66,4 +67,15 @@ export type Product = {
   };
   images: string[];
   thumbnail: string;
+};
+
+export type CustomRadioProps = {
+  count: number;
+  text: string;
+};
+
+export type Category = {
+  category: string;
+  image: string;
+  count: number;
 };
