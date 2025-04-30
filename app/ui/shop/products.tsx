@@ -1,6 +1,7 @@
+import { Product } from "@/app/lib/definitions";
 import ProductCard from "../product-card";
 
-export default async function ({ products }: { products: any[] }) {
+export default async function Products({ products }: { products: Product[] }) {
   return (
     <div className="grid grid-cols-3 gap-5 overflow-auto">
       {products.map((product) => (
