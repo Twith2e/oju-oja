@@ -15,7 +15,7 @@ export default async function Products({ products }: { products: Product[] }) {
           oldPrice={product.price.toString()}
           rating={product.rating}
           ratingCount={product.reviews.length}
-          image={product.images[1] || product.thumbnail}
+          image={product.images[0]}
           productName={product.title}
           backgroundColor={true}
         />
