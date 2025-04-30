@@ -4,7 +4,7 @@ import CategoryProducts from "./category-products";
 
 export default function Categories() {
   return (
-    <div className="px-4 lg:px-24">
+    <div className="px-4 lg:px-10 xl:px-24">
       <span className="text-base flex gap-2 items-center font-medium">
         <CiShoppingTag color="#3c50e0" size={24} />
         Categories

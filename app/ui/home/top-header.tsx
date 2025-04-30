@@ -7,8 +7,8 @@ import Sidebar from "../sidebar";
 
 export default function TopHeader() {
   return (
-    <div className="py-6 px-4 lg:px-10 gap-3 flex flex-col md:flex-row lg:justify-between">
-      <div className="flex flex-col lg:flex-row md:items-center gap-3">
+    <div className="py-6 px-4 lg:px-10 gap-3 flex flex-col md:flex-row md:justify-between">
+      <div className="flex flex-col md:flex-row md:items-center gap-3">
         <Link href="/" className="text-3xl text-[#3c50e0] font-bold">
           OJU OJA
         </Link>

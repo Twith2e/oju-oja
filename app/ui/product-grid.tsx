@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ProductGrid() {
   return (
     <div className="container px-4 py-5 lg:px-10 xl:px-24">
-      <div className="big flex flex-col-reverse lg:flex-row justify-between">
+      <div className="big flex flex-col-reverse md:flex-row justify-between">
         <div className="flex flex-col justify-center gap-10 max-w-md">
           <div className="flex gap-2 items-center">
             <span className="text-6xl font-bold text-[#3c50e0]">30%</span>
