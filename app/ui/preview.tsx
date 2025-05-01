@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { PreviewPropsType } from "../lib/definitions";
-import { LiaExpandSolid } from "react-icons/lia";
+// import { LiaExpandSolid } from "react-icons/lia";
 import { FaStar } from "react-icons/fa";
 
 export default function Preview({
@@ -15,7 +15,7 @@ export default function Preview({
   oldPrice,
   discountPercentage,
   description,
-  id,
+  //   id,
   close,
 }: PreviewPropsType) {
   return (
