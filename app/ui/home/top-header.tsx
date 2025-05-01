@@ -8,13 +8,13 @@ import Sidebar from "../sidebar";
 export default function TopHeader() {
   return (
     <div className="py-6 px-4 lg:px-10 gap-3 flex flex-col md:flex-row md:justify-between">
-      <div className="flex flex-col md:flex-row md:items-center gap-3">
+      <div className="flex flex-col md:flex-row md:items-center xl:gap-20">
         <Link href="/" className="text-3xl text-[#3c50e0] font-bold">
           OJU OJA
         </Link>
         <SearchBar />
       </div>
-      <div className="flex gap-8 items-center">
+      <div className="flex gap-8 items-center justify-between w-full xl:w-fit">
         <ul className="flex items-center gap-8 text-sm">
           <li className="xl:flex items-center gap-2 hidden">
             <LuPhoneCall size={24} color="#3C50E0" />

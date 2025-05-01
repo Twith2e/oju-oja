@@ -26,9 +26,9 @@ export default function ProductCard({
       onMouseEnter={() => setHoveredProduct(id)}
       onMouseLeave={() => setHoveredProduct(null)}
     >
-      <div className="w-full h-90 lg:h-70 bg-[#f2f3f8] rounded-md flex flex-col items-center justify-center">
+      <div className="w-full h-90 lg:h-70 bg-[#f2f3f8] rounded-xl flex flex-col items-center justify-center">
         <Image
-          className={`p-2 rounded-lg max-h-full w-full ${
+          className={`p-2 rounded-xl max-h-full w-full object-contain ${
             backgroundColor && "bg-white"
           }`}
           src={image}

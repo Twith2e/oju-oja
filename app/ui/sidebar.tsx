@@ -7,7 +7,7 @@ import { IoIosClose } from "react-icons/io";
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="relative">
+    <div className="relative xl:hidden">
       <button onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <IoIosClose size={28} /> : <RxHamburgerMenu size={28} />}
       </button>

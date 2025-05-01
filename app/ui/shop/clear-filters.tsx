@@ -13,7 +13,7 @@ export default function ClearFilters() {
     <div className="bg-white rounded-lg py-4 px-5 flex items-center justify-between">
       <span className="text-[#606882]">Filters:</span>
       <button
-        className="text-[#3c50e0] font-medium flex items-center gap-2"
+        className="text-[#3c50e0] font-medium flex items-center gap-2 cursor-pointer"
         onClick={clearSearchParams}
       >
         <span>Clean All</span>

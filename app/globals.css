@@ -44,14 +44,12 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-template-areas: 
-  "big big small-1"
-  "big big small-1"
-  "big big small-2"
-  "big big small-2";
-  max-width: 100vw;
+  "big big big small-1"
+  "big big big small-1"
+  "big big big small-2"
+  "big big big small-2";
   margin: 0;
   gap: 20px;
-  width: 100%;
 
 }
 
@@ -111,6 +109,12 @@ body {
   gap: 30px;
 }
 
+.preview-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 100px 1fr 1fr;
+}
+
 .home-section-header {
   @apply text-xl lg:text-2xl font-semibold text-[#1C274C]
 }
@@ -157,7 +161,7 @@ body {
   
 }
 
-@media screen and (max-width: 64.25rem) {
+@media screen and (min-width:41rem) and ( max-width: 64.25rem) {
   .container {
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: 

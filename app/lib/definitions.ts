@@ -80,3 +80,17 @@ export type Category = {
   image: string;
   count: number;
 };
+
+export type PreviewPropsType = {
+  image: string[];
+  title: string;
+  rating: number;
+  ratingCount: number;
+  stock: number;
+  price: number;
+  oldPrice: number;
+  discountPercentage: number;
+  description: string;
+  id: number;
+  close: () => void;
+};

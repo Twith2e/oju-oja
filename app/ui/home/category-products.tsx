@@ -7,7 +7,7 @@ export default async function CategoryProducts() {
   const cappedCategories = categories?.slice(0, 6);
 
   return (
-    <div className="flex overflow-auto gap-16 justify-center mt-8 md:ps-24 lg:ps-0 ps-0">
+    <div className="flex overflow-auto gap-12 justify-around mt-8">
       {cappedCategories?.map((category, index) => (
         <Link
           key={index}

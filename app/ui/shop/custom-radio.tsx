@@ -54,7 +54,7 @@ export default function CustomRadio({ count, text }: CustomRadioProps) {
     } else {
       setIsChecked(false);
     }
-  }, []);
+  }, [searchParams]);
 
   return (
     <div
