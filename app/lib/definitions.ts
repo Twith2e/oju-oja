@@ -88,7 +88,7 @@ export type PreviewPropsType = {
   ratingCount: number;
   stock: number;
   price: number;
-  oldPrice: number;
+  oldPrice: string;
   discountPercentage: number;
   description: string;
   id: number;

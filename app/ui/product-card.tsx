@@ -67,7 +67,7 @@ export default function ProductCard({
             : "bottom-10 opacity-0"
         } transition-all duration-200`}
       >
-        <ProductActions />
+        <ProductActions id={id} />
       </div>
     </div>
   );

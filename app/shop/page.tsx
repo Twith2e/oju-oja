@@ -32,7 +32,7 @@ export default async function Shop({
   }
   const products = await fetchFilteredProducts(params);
   return (
-    <div className="">
+    <main className="">
       <div className="py-10 flex flex-col gap-3 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 lg:px-10 xl:px-24">
         <h1 className="text-xl lg:text-[2rem] text-[#1C274C] font-semibold">
           Explore All Products
@@ -50,6 +50,6 @@ export default async function Shop({
           <Products products={products} />
         </div>
       </div>
-    </div>
+    </main>
   );
 }

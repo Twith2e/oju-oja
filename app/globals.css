@@ -111,7 +111,7 @@ body {
 
 .preview-container {
   display: grid;
-  gap: 30px;
+  gap: 60px;
   grid-template-columns: 100px 1fr 1fr;
 }
 

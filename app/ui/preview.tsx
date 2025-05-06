@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import { PreviewPropsType } from "../lib/definitions";
+import { IoCloseOutline } from "react-icons/io5";
+import { FaMinus, FaPlus } from "react-icons/fa6";
+import { CiCircleCheck } from "react-icons/ci";
 // import { LiaExpandSolid } from "react-icons/lia";
 import { FaStar } from "react-icons/fa";
+import { useState } from "react";
+import ImageOptionSkeleton from "./shop/imageOptionSkeleton";
 
 export default function Preview({
   image,
@@ -18,25 +23,58 @@ export default function Preview({
   //   id,
   close,
 }: PreviewPropsType) {
+  const [qty, setQty] = useState(1);
+  const [currentImage, setCurrentImage] = useState<string>(image[0]);
+
+  function incrementQty() {
+    if (qty < stock) {
+      setQty(qty + 1);
+    }
+  }
+
+  function decrementQty() {
+    if (qty > 1) {
+      setQty(qty - 1);
+    }
+  }
+
   return (
-    <div className="p-5 rounded-md preview-container">
-      <div>
-        {image.map((img, index) => (
-          <Image key={index} src={img} width={100} height={100} alt={img} />
-        ))}
-      </div>
+    <div className="p-5 pe-10 py-10 rounded-md preview-container">
+      {image.length < 0 ? (
+        <ImageOptionSkeleton />
+      ) : (
+        <div>
+          {image.map((img, index) => (
+            <button
+              className={`bg-[#f9fafb] hover:ring-1 hover:ring-[#3c50e0] cursor-pointer rounded-lg ${
+                currentImage === img && "ring-[#3c50e0] ring-2"
+              }`}
+              onClick={() => setCurrentImage(img)}
+              key={index}
+            >
+              <Image src={img} width={100} height={100} alt={img} />
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="border border-gray-300 rounded-lg bg-[#f9fafb] p-10">
-        <Image src={image[0]} width={300} height={300} alt={image[0]} />
+        <Image src={currentImage} width={300} height={300} alt={currentImage} />
       </div>
       <div className="flex flex-col gap-3">
         <div className="flex w-full justify-end">
-          <button onClick={close}>Close</button>
+          <button
+            className="cursor-pointer hover:text-red-500 flex items-center justify-center w-9 h-9 rounded-full bg-[#f3f4f6]"
+            onClick={close}
+          >
+            <IoCloseOutline size={24} />
+          </button>
         </div>
         <span className="bg-[#22AD5C] text-white text-[0.75rem] text-medium py-1 px-3 w-fit">
           {discountPercentage}% OFF
         </span>
         <h2 className="text-[1.75rem] text-[#1C274C] font-semibold">{title}</h2>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-3">
           <span className="flex gap-2">
             {[...Array(5)].map((_, index) => (
               <FaStar
@@ -48,18 +86,52 @@ export default function Preview({
               />
             ))}
           </span>
-          <span>
-            {rating} Rating ({ratingCount} reviews)
-          </span>
-          {stock > 0 ? <span>In Stock</span> : <span>Out of Stock</span>}
-        </div>
-        <p>{description}</p>
-        <div>
-          <div className="flex flex-col">
-            <span>Price</span>
-            <span>
-              {price} <span>{oldPrice}</span>
+          <span className="text-[#1C274C] font-medium">
+            {rating} Rating{" "}
+            <span className="text-[#495270] font-normal">
+              ({ratingCount} reviews)
             </span>
+          </span>
+          {stock > 0 ? (
+            <span className="text-[#22AD5C] flex gap-2 items-center">
+              <CiCircleCheck size={24} /> In Stock
+            </span>
+          ) : (
+            <span>Out of Stock</span>
+          )}
+        </div>
+        <p className="text-[#606882] font-normal">{description}</p>
+        <div className="flex justify-between items-center">
+          <div className="flex flex-col gap-5">
+            <h4 className="text-lg text-[#1C274C] font-semibold">Price</h4>
+            <span className="text-3xl text-[#1C274C] font-semibold">
+              ${price}{" "}
+              <span className="text-2xl text-[#8D93A5] font-medium line-through">
+                ${oldPrice}
+              </span>
+            </span>
+          </div>
+          <div className="flex flex-col gap-5">
+            <h4 className="text-lg text-[#1C274C] font-semibold select-none">
+              Quantity
+            </h4>
+            <div className="flex items-center gap-3">
+              <button
+                className="bg-[#f3f4f6] px-3 py-1 rounded-md cursor-pointer"
+                onClick={decrementQty}
+              >
+                <FaMinus size={24} />
+              </button>
+              <div className="bg-white border border-gray-300 text-base px-7 py-2 rounded-md select-none">
+                {qty}
+              </div>
+              <button
+                className="bg-[#f3f4f6] px-3 py-1 rounded-md cursor-pointer"
+                onClick={incrementQty}
+              >
+                <FaPlus size={24} />
+              </button>
+            </div>
           </div>
         </div>
       </div>
