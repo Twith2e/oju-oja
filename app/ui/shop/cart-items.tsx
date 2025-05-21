@@ -9,7 +9,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 export default function CartItems({ id }: { id: number }) {
   const [product, setProduct] = useState<Product>();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const { setCart } = useContext(NewCartContext);
 
   async function fetchProductWithCartId() {
