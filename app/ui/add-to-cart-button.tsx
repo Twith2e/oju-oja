@@ -57,7 +57,7 @@ export default function AddToCartButton({
       onClick={(e: React.MouseEvent) => {
         e.stopPropagation();
         if (isInCart) {
-          () => {};
+          console.log("Item already in cart");
         } else {
           addToCart(id, price);
         }
