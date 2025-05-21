@@ -31,7 +31,9 @@ export default function TopHeader() {
     }, 0);
     setTotal(Number(total.toFixed(2)));
 
-    setTotalPrice && setTotalPrice(total);
+    if (setTotalPrice) {
+      setTotalPrice(total);
+    }
   }
 
   useEffect(() => {

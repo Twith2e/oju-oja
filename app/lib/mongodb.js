@@ -31,6 +31,7 @@ async function dbConnect() {
     cached.conn = await cached.promise;
   } catch (err) {
     // Optional: reset cached.promise to allow retry on next request
+    console.error(err);
     cached.promise = null;
     throw new Error("Failed to connect to MongoDB");
   }

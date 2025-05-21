@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 import { Cart } from "../lib/schemas";
 export const NewCartContext = createContext<{
   cart: Cart[];
@@ -26,23 +26,6 @@ export default function NewCartContextProvider({
   const [cart, setCart] = useState<Cart[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
-
-  async function fetchCart() {
-    const res = await fetch("http://localhost:3000/api/carts", {
-      cache: "no-store",
-    });
-    if (!res.ok) {
-      const text = await res.text();
-      console.error("Fetch /api/carts failed:", res.status, text);
-      throw new Error(`API error: ${res.status}`);
-    }
-    const carts: Cart[] = await res.json();
-    carts.forEach((cart: Cart) => {});
-  }
-
-  useEffect(() => {
-    fetchCart();
-  }, []);
 
   return (
     <NewCartContext.Provider
