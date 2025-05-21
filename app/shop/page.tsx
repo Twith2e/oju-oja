@@ -6,6 +6,7 @@ import Categories from "../ui/shop/categories";
 import Tags from "../ui/shop/tags";
 import Products from "../ui/shop/products";
 import { fetchFilteredProducts } from "../lib/data";
+import ShopSidebarProvider from "../ui/shop/shop-sidebar-provider";
 
 export const metadata: Metadata = {
   title: "Shop | Oju Oja",
@@ -32,7 +33,8 @@ export default async function Shop({
   }
   const products = await fetchFilteredProducts(params);
   return (
-    <main className="">
+    <main className="pt-50">
+      <ShopSidebarProvider />
       <div className="py-10 flex flex-col gap-3 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 lg:px-10 xl:px-24">
         <h1 className="text-xl lg:text-[2rem] text-[#1C274C] font-semibold">
           Explore All Products

@@ -10,7 +10,7 @@ import Testimonials from "./ui/home/testimonials";
 
 export default function Home() {
   return (
-    <div className="mb-10">
+    <div className="mb-10 pt-40">
       <main>
         <section className="bg-[#e5eaf4]">
           <ProductGrid />

@@ -20,7 +20,8 @@ export default function ProductCard({
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
 
   return (
-    <div
+    <Link
+      href={`/products/${id}`}
       className="relative cursor-pointer w-full"
       key={id}
       onMouseEnter={() => setHoveredProduct(id)}
@@ -52,9 +53,7 @@ export default function ProductCard({
           </div>
           ({ratingCount})
         </div>
-        <Link href="" className="text-base font-medium">
-          {productName}
-        </Link>
+        <span className="text-base font-medium">{productName}</span>
         <div className="flex gap-2 items-center text-lg font-bold">
           <span>${newPrice}</span>
           <span className="text-gray-500 line-through">${oldPrice}</span>
@@ -67,8 +66,8 @@ export default function ProductCard({
             : "bottom-10 opacity-0"
         } transition-all duration-200`}
       >
-        <ProductActions id={id} />
+        <ProductActions id={id} price={+oldPrice} />
       </div>
-    </div>
+    </Link>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { ShopContext } from "@/app/contexts/shop-context";
 
 export default function TagButton({ text }: { text: string }) {
   const [isActive, setIsActive] = useState(false);
@@ -9,6 +10,7 @@ export default function TagButton({ text }: { text: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+  const { setIsOpen } = useContext(ShopContext);
   function handleTagPick() {
     const currentParams = new URLSearchParams(searchParams.toString());
     const selectedTag = textRef.current?.innerText;
@@ -40,6 +42,7 @@ export default function TagButton({ text }: { text: string }) {
       onClick={() => {
         setIsActive(!isActive);
         handleTagPick();
+        setIsOpen(false);
       }}
     >
       <span ref={textRef}>{text}</span>

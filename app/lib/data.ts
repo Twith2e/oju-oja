@@ -1,5 +1,19 @@
 import { Product } from "./definitions";
 
+export async function fetchProductByID(id: string) {
+  try {
+    const res = await fetch(`https://dummyjson.com/products/${id}`);
+    if (!res.ok) {
+      console.error("Failed to fetch data:", res.status);
+      return;
+    }
+    const product = await res.json();
+    return product;
+  } catch (error) {
+    console.error("Error fetching product:", error);
+  }
+}
+
 export async function fetchAllProducts() {
   const res = await fetch("https://dummyjson.com/products?limit=0");
   if (!res.ok) {

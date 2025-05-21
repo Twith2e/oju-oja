@@ -94,3 +94,8 @@ export type PreviewPropsType = {
   id: number;
   close: () => void;
 };
+
+export type customToastType = {
+  message: string;
+  type: "success" | "error" | "warning";
+};

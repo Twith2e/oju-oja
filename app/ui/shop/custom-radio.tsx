@@ -1,13 +1,15 @@
 "use client";
 
 import { CustomRadioProps } from "@/app/lib/definitions";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { ShopContext } from "@/app/contexts/shop-context";
 
 export default function CustomRadio({ count, text }: CustomRadioProps) {
   const [isChecked, setIsChecked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const checkboxId = `checkbox-${text.replace(/\s+/g, "-").toLowerCase()}`;
+  const { setIsOpen } = useContext(ShopContext);
 
   const textRef = useRef<HTMLSpanElement>(null);
 
@@ -61,6 +63,7 @@ export default function CustomRadio({ count, text }: CustomRadioProps) {
       onClick={() => {
         handleToggle();
         handleCategoryPick();
+        setIsOpen(false);
       }}
       onMouseOver={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}

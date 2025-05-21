@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { PreviewPropsType } from "../lib/definitions";
 import { IoCloseOutline } from "react-icons/io5";
-import { FaMinus, FaPlus } from "react-icons/fa6";
 import { CiCircleCheck } from "react-icons/ci";
 // import { LiaExpandSolid } from "react-icons/lia";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 import ImageOptionSkeleton from "./shop/imageOptionSkeleton";
+import { ProductQtyButton } from "./product-qty-button";
 
 export default function Preview({
   image,
@@ -23,21 +23,7 @@ export default function Preview({
   //   id,
   close,
 }: PreviewPropsType) {
-  const [qty, setQty] = useState(1);
   const [currentImage, setCurrentImage] = useState<string>(image[0]);
-
-  function incrementQty() {
-    if (qty < stock) {
-      setQty(qty + 1);
-    }
-  }
-
-  function decrementQty() {
-    if (qty > 1) {
-      setQty(qty - 1);
-    }
-  }
-
   return (
     <div className="p-5 pe-10 py-10 rounded-md preview-container">
       {image.length < 0 ? (
@@ -115,23 +101,7 @@ export default function Preview({
             <h4 className="text-lg text-[#1C274C] font-semibold select-none">
               Quantity
             </h4>
-            <div className="flex items-center gap-3">
-              <button
-                className="bg-[#f3f4f6] px-3 py-1 rounded-md cursor-pointer"
-                onClick={decrementQty}
-              >
-                <FaMinus size={24} />
-              </button>
-              <div className="bg-white border border-gray-300 text-base px-7 py-2 rounded-md select-none">
-                {qty}
-              </div>
-              <button
-                className="bg-[#f3f4f6] px-3 py-1 rounded-md cursor-pointer"
-                onClick={incrementQty}
-              >
-                <FaPlus size={24} />
-              </button>
-            </div>
+            <ProductQtyButton stock={stock} />
           </div>
         </div>
       </div>

@@ -12,13 +12,29 @@ if (!cached) {
 }
 
 async function dbConnect() {
-  if (cached.conn) {
-    return cached.conn;
-  }
+  if (cached.conn) return cached.conn;
+
   if (!cached.promise) {
-    cached.promise = mongoose.connect(uri).then((mongoose) => mongoose);
+    cached.promise = mongoose
+      .connect(uri, {
+        serverSelectionTimeoutMS: 10000,
+        socketTimeoutMS: 45000,
+      })
+      .then((mongoose) => mongoose)
+      .catch((err) => {
+        console.error("MongoDB connection error:", err.message);
+        throw err;
+      });
   }
-  cached.conn = await cached.promise;
+
+  try {
+    cached.conn = await cached.promise;
+  } catch (err) {
+    // Optional: reset cached.promise to allow retry on next request
+    cached.promise = null;
+    throw new Error("Failed to connect to MongoDB");
+  }
+
   return cached.conn;
 }
 
